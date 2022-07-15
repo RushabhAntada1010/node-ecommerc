@@ -92,3 +92,32 @@ module.exports.updateData = function(req,res){
 module.exports.changepass = function(req,res){
     return res.render('changePass');
 }
+
+module.exports.updateDataPass = function(req,res){
+    let pass = req.user.password;
+    let current = req.body.currentpassword;
+    let newPass = req.body.npassword;
+    let cPass = req.body.cpassword;
+
+    if (pass == current) {
+        if (current !== newPass) {
+            if (newPass == cPass) {
+                user.findByIdAndUpdate(req.user.id ,{
+                    password: newPass
+                }, function(err, passData){
+                    if (err) {
+                        console.log('Password is not Update !!');
+                    }
+                    return res.redirect('/admin/profilePage');
+                })
+            } else {
+                console.log("Conform Password is wrong !!");
+            }
+        } else{
+            console.log("Please Enter Another PassWord !!");
+        }
+    }
+    else{
+        console.log('Current Password is Wrong !!');
+    }
+}

@@ -23,6 +23,15 @@ routes.post('/conformOrder', homeController.conformOrder);
 
 routes.get('/adminPage',homeController.admin_dashboard);
 
+routes.get('/about', homeController.about);
+
+routes.get('/blog', homeController.blog);
+
+routes.get('/blogSingle', homeController.blogSingle);
+
+routes.get('/contact', homeController.blogSingle);
+
+
 
 routes.use('/admin', require('./admin'));
 

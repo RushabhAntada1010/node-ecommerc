@@ -36,7 +36,23 @@ module.exports.conformOrder = function(req,res){
             console.log('data is not find');
             return false;
         }
-        return res.redirect('back');
         alert('Your Order Is Conform..')
+        return res.redirect('back');
     })
+}
+
+module.exports.about = function(req, res){
+    return res.render('about');
+}
+
+module.exports.blog = function(req,res){
+    return res.render('blog');
+}
+
+module.exports.blogSingle = function(req,res){
+    return res.render('blog-single');
+}
+
+module.exports.contact = function(req,res){
+    return res.render('contact');
 }

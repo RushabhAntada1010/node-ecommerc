@@ -1,4 +1,5 @@
 const user = require('../models/admin_login');
+const alert = require('alert')
 
 module.exports.admin = function(req,res){
     if(req.isAuthenticated()){
@@ -111,13 +112,17 @@ module.exports.updateDataPass = function(req,res){
                     return res.redirect('/admin/profilePage');
                 })
             } else {
-                console.log("Conform Password is wrong !!");
+                alert("Conform Password is wrong !!");
             }
         } else{
-            console.log("Please Enter Another PassWord !!");
+            alert("Please Enter Another PassWord !!");
         }
     }
     else{
-        console.log('Current Password is Wrong !!');
+        alert('Current Password is Wrong !!');
     }
+}
+
+module.exports.product = function(req, res){
+    return res.render("product");
 }

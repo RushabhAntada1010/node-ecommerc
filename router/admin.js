@@ -32,4 +32,6 @@ routes.get('/changepass', passport.checkAuthenticatedUser , adminController.chan
 
 routes.post('/updateDataPass', passport.checkAuthenticatedUser, adminController.updateDataPass);
 
+routes.get('/product', passport.checkAuthenticatedUser, adminController.product);
+
 module.exports = routes;

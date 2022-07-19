@@ -29,7 +29,7 @@ routes.get('/blog', homeController.blog);
 
 routes.get('/blogSingle', homeController.blogSingle);
 
-routes.get('/contact', homeController.blogSingle);
+routes.get('/contact', homeController.contact);
 
 
 

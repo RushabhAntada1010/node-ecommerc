@@ -1,4 +1,6 @@
 const user = require('../models/admin_login');
+const product = require('../models/product');
+
 const alert = require('alert')
 
 module.exports.admin = function(req,res){
@@ -125,4 +127,30 @@ module.exports.updateDataPass = function(req,res){
 
 module.exports.product = function(req, res){
     return res.render("product");
+}
+
+module.exports.addproduct = function(req,res){
+    console.log(req.body.productName);
+    product.uploadAvtar(req, res, function(err){
+        if(err){
+            console.log('Somthing is wrong..');
+            return false;
+        }
+        if (req.file) {
+            var productimage = product.productImage +'/'+req.file.filename;
+            product.create({
+                productName : req.body.productName,
+                price : req.body.price,
+                category : req.body.category,
+                image : productimage,
+                description: req.body.description,
+            }, function(err,register_data){
+                if (err) {
+                    console.log('Data is not inserted..');
+                    return false;
+                }
+                return res.redirect('back');
+            })
+        }
+    });
 }

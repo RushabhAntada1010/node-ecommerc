@@ -132,6 +132,7 @@ module.exports.product = function(req, res){
 module.exports.addproduct = function(req,res){
     console.log(req.body.productName);
     product.uploadAvtar(req, res, function(err){
+        console.info('req.body',req.body)
         if(err){
             console.log('Somthing is wrong..');
             return false;

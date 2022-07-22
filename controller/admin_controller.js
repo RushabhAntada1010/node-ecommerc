@@ -131,27 +131,41 @@ module.exports.product = function(req, res){
 }
 
 module.exports.addproduct = function(req,res){
-    console.log(req.body.category);
-    // product.uploadAvtar(req, res, function(err){
-    //     if(err){
-    //         console.log('Somthing is wrong..');
+    // console.log(req.body);
+    // product.create({
+    //     pname : req.body.pname,
+    //     price : req.body.price,
+    //     category : req.body.category,
+    //     description: req.body.description,
+    // }, function(err,register_data){
+    //     if (err) {
+    //         console.log('Data is not inserted..');
     //         return false;
     //     }
-    //     if (req.file) {
-    //         var productimage = product.productImage +'/'+req.file.filename;
-    //         product.create({
-    //             productName : req.body.productName,
-    //             price : req.body.price,
-    //             category : req.body.category,
-    //             image : productimage,
-    //             description: req.body.description,
-    //         }, function(err,register_data){
-    //             if (err) {
-    //                 console.log('Data is not inserted..');
-    //                 return false;
-    //             }
-    //             return res.redirect('back');
-    //         })
-    //     }
-    // });
+    //     return res.redirect('back');
+    // })
+    product.puploadAvtar(req, res, function(err){
+        if(err){
+            console.log('Somthing is wrong..');
+            return false;
+        }
+        if (req.file) {
+            var productimage = product.productImage +'/'+req.file.filename;
+            product.create({
+                pname : req.body.pname,
+                price : req.body.price,
+                category : req.body.category,
+                pimage : productimage,
+                description: req.body.description,
+            }, function(err, productData){
+                if (err) {
+                    console.log('Data is not inserted..');
+                    return false;
+                }
+                return res.redirect('/product', {
+                    'productData' : productData
+                });
+            })
+        }
+    });
 }

@@ -44,5 +44,5 @@ app.listen(port, function(err){
         console.log('server is not working !!');
         return false;
     }
-    console.log('server is runnig successfully working in this port :'+ port);
+    console.log('Your server available at http://localhost:9000')
 })

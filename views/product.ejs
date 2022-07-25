@@ -3,7 +3,11 @@
     <div>
       <h2>Add Product :</h2>
     </div>
+<<<<<<< HEAD
+    <form id="formAccountSettings" method="post" action="/admin/addproduct" enctype="multipart/form-data">
+=======
     <form method="post" action="/admin/addproduct" enctype="multipart/form-data">
+>>>>>>> a097fc3a446f28f4f62052297cfac8c2cc91d88b
       <div class="row">
         <div class="mb-3 col-md-6">
           <label for="productImage" class="form-label">Product Image :</label>
@@ -46,12 +50,12 @@
           </tr>
         </thead>
         <tbody class="table-border-bottom-0">
-          <% for(var proData of productData){ %>
+          <% for(let a of productData){ %>
           <tr>
-            <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong><%= proData.pname %></strong></td>
-            <td><%= proData.category %></td>
-            <td><%= prodata.price %></td>
-            <td><span class="badge bg-label-primary me-1"><%= proData.description %></span></td>
+            <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong><%= a.pname %></strong></td>
+            <td><%= a.category %></td>
+            <td><%= a.price %></td>
+            <td><span class="badge bg-label-primary me-1"><%= a.description %></span></td>
             <td>
               <div class="dropdown">
                 <button type="button" class="btn p-0 dropdown-toggle hide-arrow" style="width: 60px"

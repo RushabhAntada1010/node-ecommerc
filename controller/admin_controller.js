@@ -162,7 +162,6 @@ module.exports.addproduct = function(req,res){
                     console.log('Data is not inserted..');
                     return false;
                 }
-                console.info('productData',productData)
                 return res.redirect('/admin/product');
             })
         }

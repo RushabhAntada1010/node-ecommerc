@@ -1,8 +1,16 @@
 const alert = require('alert');
 const user_Data = require('../models/user_details');
+const Product = require('../models/product');
 
 module.exports.index = function(req,res){
-    return res.render('index');
+    Product.find({}, function(err, productData){
+        if (err) {
+            return res.json(500, "message : Data not Find");
+        }
+        return res.render('index', {
+            'productData' : productData
+        });
+    })
 }
 
 module.exports.shop = function(req,res){

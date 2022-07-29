@@ -9,7 +9,7 @@ console.log('router IS connected');
 
 routes.get('/', homeController.index);
 
-routes.get('/shop', homeController.shop);
+routes.get('/viewallproduct', homeController.viewallproduct);
 
 routes.get('/wishlist', homeController.wishlist);
 
@@ -30,6 +30,8 @@ routes.get('/blog', homeController.blog);
 routes.get('/blogSingle', homeController.blogSingle);
 
 routes.get('/contact', homeController.contact);
+
+routes.get('/proDetaile', homeController.proDetaile);
 
 
 

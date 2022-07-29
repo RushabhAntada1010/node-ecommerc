@@ -136,21 +136,16 @@ module.exports.product = function(req, res){
 }
 
 module.exports.addproduct = function(req,res){
-    console.log(req.body.category);
-    // product.uploadAvtar(req, res, function(err){
-    //     if(err){
-    //         console.log('Somthing is wrong..');
-    //         return false;
-    //     }
-    //     return res.redirect('back');
-    // })
+   
     product.puploadAvtar(req, res, function(err){
         if(err){
             console.log('Somthing is wrong..');
             return false;
         }
+        // console.log(req.body);
+        // console.log(req.file);
         if (req.file) {
-            var productimage = product.productImage +'/'+req.file.filename;
+            var productimage = product.product_Path +'/'+req.file.filename;
             product.create({
                 pname : req.body.pname,
                 price : req.body.price,

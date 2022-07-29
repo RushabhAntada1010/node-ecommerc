@@ -2,19 +2,18 @@ const alert = require('alert');
 const user_Data = require('../models/user_details');
 const Product = require('../models/product');
 
-module.exports.index = function(req,res){
-    Product.find({}, function(err, productData){
-        if (err) {
-            return res.json(500, "message : Data not Find");
-        }
-        return res.render('index', {
-            'productData' : productData
-        });
-    })
+module.exports.index = async function(req,res){
+    var productData = await Product.find({}).limit(8); 
+    return res.render('index', {
+        'productData' : productData
+    });
 }
 
-module.exports.shop = function(req,res){
-    return res.render('shop');
+module.exports.viewallproduct = async function(req,res){
+    var data = await Product.find({});
+    return res.render('shop', {
+        'productData' : data
+    });
 }
 
 module.exports.wishlist = function(req,res){
@@ -63,4 +62,13 @@ module.exports.blogSingle = function(req,res){
 
 module.exports.contact = function(req,res){
     return res.render('contact');
+}
+
+module.exports.proDetaile = async function(req,res){
+    var id = req.query.id;
+    // console.log(id);
+    var data = await Product.findById(id).limit(4);
+    return res.render('product-single',{
+        'data' : data
+    });
 }

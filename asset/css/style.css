@@ -8691,6 +8691,8 @@ h1, h2, h3, h4, h5,
       background: #82ae46;
       font-size: 12px; }
     .product .img-prod img {
+      width: 253px;
+      height: 253px;
       -webkit-transform: scale(1);
       -moz-transform: scale(1);
       -ms-transform: scale(1);

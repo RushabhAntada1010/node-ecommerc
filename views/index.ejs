@@ -149,10 +149,10 @@
     						<div class="overlay"></div> -->
     					</a>
     					<div class="text py-3 pb-4 px-3 text-center">
-    						<h3><a href="#"><%= pro.pname %></a></h3>
+    						<h3><a href="#"> <%= pro.pname %> </a></h3>
     						<div class="d-flex">
     							<div class="pricing">
-		    						<p class="price"><span class="mr-2 price-dc">$120.00</span><span class="price-sale"><%= pro.price %></span></p>
+		    						<p class="price"><span class="mr-2 price-dc">$120.00</span><span class="price-sale">$<%= pro.price %></span></p>
 		    					</div>
 	    					</div>
 	    					<div class="bottom-area d-flex px-3">
@@ -173,6 +173,10 @@
     			</div>
 				<% } %>
     		</div>
+        <div style="display: block; text-align: center;">
+          <a href="viewallproduct" style="display: inline-block; padding: 10px 30px; color:#fff;
+          background-color:#82ae46; border-radius: 8px;">All Product</a>
+        </div>
     	</div>
     </section>
 		

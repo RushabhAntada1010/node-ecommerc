@@ -16,7 +16,6 @@ passport.use(new passportLocal({
             console.log("password not match");
             return done(null,false);
         }
-        console.log(user);
         return done(null,user);
     });
 }));

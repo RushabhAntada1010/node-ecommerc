@@ -1,6 +1,6 @@
 const user = require('../models/admin_login');
-
 const product = require('../models/product');
+const userData = require('../models/user_details');
 
 const alert = require('alert');
 const { find } = require('../models/admin_login');
@@ -160,5 +160,12 @@ module.exports.addproduct = function(req,res){
                 return res.redirect('/admin/product');
             })
         }
+    });
+}
+
+module.exports.order = async function(req,res){
+    var Data = await userData.find({});
+    return res.render('order', {
+        'data' : Data
     });
 }

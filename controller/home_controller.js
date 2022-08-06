@@ -72,3 +72,11 @@ module.exports.proDetaile = async function(req,res){
         'data' : data
     });
 }
+
+module.exports.addtocart = async function(req,res){
+    var id = req.query.id;
+    var data = await Product.findById(id);
+    return res.render('cart', {
+        'data' : data
+    });
+}

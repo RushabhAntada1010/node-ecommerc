@@ -1,5 +1,5 @@
 <%- include('header') %>
-    <section id="home-section" class="hero">
+    <section id="home-section" class="hero" style="padding-bottom: 6em;">
 		  <div class="home-slider owl-carousel">
 	      <div class="slider-item" style="background-image: url(../asset/images/bg_1.jpg);">
 	      	<div class="overlay"></div>
@@ -144,12 +144,12 @@
 				<% for(var pro of productData){ %>
     			<div class="col-md-6 col-lg-3 ftco-animate">
     				<div class="product">
-    					<a href="#" class="img-prod"><img class="img-fluid" src="<%= pro.pimage %>" alt="Image Not Find">
+    					<a href="/proDetaile/?id=<%= pro.id %>" class="img-prod"><img class="img-fluid" src="<%= pro.pimage %>" alt="Image Not Find">
     						<!-- <span class="status">30%</span>
     						<div class="overlay"></div> -->
     					</a>
     					<div class="text py-3 pb-4 px-3 text-center">
-    						<h3><a href="#"> <%= pro.pname %> </a></h3>
+    						<h3><a href="/proDetaile/?id=<%= pro.id %>"> <%= pro.pname %> </a></h3>
     						<div class="d-flex">
     							<div class="pricing">
 		    						<p class="price"><span class="mr-2 price-dc">$120.00</span><span class="price-sale">$<%= pro.price %></span></p>

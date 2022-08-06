@@ -33,6 +33,8 @@ routes.get('/contact', homeController.contact);
 
 routes.get('/proDetaile', homeController.proDetaile);
 
+routes.get('/addtocart', homeController.addtocart);
+
 
 
 routes.use('/admin', require('./admin'));
